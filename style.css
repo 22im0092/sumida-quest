@@ -1201,3 +1201,59 @@ footer p {
   }
 
 }
+/* ==================================================
+   循環バス表示
+================================================== */
+
+.transport-lead {
+  margin-bottom: 14px;
+}
+
+.bus-names {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 18px;
+}
+
+.bus-name {
+  display: inline-block;
+  padding: 6px 14px;
+  color: var(--deep-blue);
+  background: var(--light-blue);
+  border: 1px solid #b9dff2;
+  border-radius: 999px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.bus-separator {
+  color: #8ba0ac;
+  font-weight: 700;
+}
+
+.transport-note {
+  margin-bottom: 8px;
+  color: var(--sub-text);
+  font-size: 0.92rem;
+}
+
+.transport-prohibited {
+  margin-bottom: 0;
+  color: #7a3b3b;
+  font-weight: 700;
+}
+
+/* スマートフォンでは区切り線を非表示 */
+@media screen and (max-width: 600px) {
+
+  .bus-names {
+    gap: 7px;
+  }
+
+  .bus-separator {
+    display: none;
+  }
+
+}
