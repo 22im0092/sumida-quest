@@ -3,46 +3,27 @@
    style.css 完全版
 ================================================== */
 
-
-/* ==================================================
-   基本設定
-================================================== */
-
 :root {
   --main-blue: #0879b9;
   --deep-blue: #07547f;
   --dark-blue: #073a59;
   --light-blue: #eaf7ff;
   --pale-blue: #f5fbff;
-
   --yellow: #ffd84d;
   --light-yellow: #fff8d7;
-
   --white: #ffffff;
   --text: #263846;
   --sub-text: #59707f;
   --border: #d9e8f1;
-
-  --shadow:
-    0 14px 35px rgba(7, 84, 127, 0.12);
-
-  --strong-shadow:
-    0 20px 45px rgba(7, 84, 127, 0.18);
-
+  --shadow: 0 14px 35px rgba(7, 84, 127, 0.12);
+  --strong-shadow: 0 20px 45px rgba(7, 84, 127, 0.18);
   --radius-large: 28px;
   --radius-medium: 20px;
-  --radius-small: 14px;
 }
-
-
-/* すべての要素のサイズ計算を統一 */
 
 * {
   box-sizing: border-box;
 }
-
-
-/* ページ全体 */
 
 html {
   scroll-behavior: smooth;
@@ -50,7 +31,6 @@ html {
 
 body {
   margin: 0;
-
   color: var(--text);
   background: var(--white);
 
@@ -66,21 +46,13 @@ body {
 
   font-size: 16px;
   line-height: 1.9;
-
   overflow-x: hidden;
 }
 
-
-/* 画像共通 */
-
 img {
   display: block;
-
   max-width: 100%;
 }
-
-
-/* 見出し共通 */
 
 h1,
 h2,
@@ -99,18 +71,6 @@ p:last-child {
   margin-bottom: 0;
 }
 
-
-/* リンク共通 */
-
-a {
-  color: inherit;
-}
-
-
-/* ==================================================
-   共通レイアウト
-================================================== */
-
 .container {
   width: min(1120px, 90%);
   margin: 0 auto;
@@ -120,25 +80,33 @@ section {
   padding: 100px 0;
 }
 
-
-/* セクション見出し */
+/* ==================================================
+   セクション見出し
+================================================== */
 
 .section-heading {
   margin-bottom: 58px;
-
   text-align: center;
+}
+
+.section-label {
+  margin-bottom: 8px;
+  color: var(--main-blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+}
+
+.section-label-light {
+  color: var(--yellow);
 }
 
 .section-heading h2 {
   position: relative;
-
   display: inline-block;
-
   margin-bottom: 20px;
   padding-bottom: 16px;
-
   color: var(--deep-blue);
-
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
   letter-spacing: 0.05em;
@@ -146,32 +114,27 @@ section {
 
 .section-heading h2::after {
   content: "";
-
   position: absolute;
   left: 50%;
   bottom: 0;
-
   width: 76px;
   height: 6px;
-
   background: var(--yellow);
   border-radius: 999px;
-
   transform: translateX(-50%);
 }
 
-.section-heading p {
+.section-heading > p:last-child {
   max-width: 760px;
   margin: 0 auto;
-
   color: var(--sub-text);
-
   font-size: 1.05rem;
   font-weight: 600;
 }
 
-
-/* 文章と写真を左右に並べる部分 */
+/* ==================================================
+   共通2列レイアウト
+================================================== */
 
 .two-column {
   display: grid;
@@ -180,56 +143,29 @@ section {
   align-items: center;
 }
 
-
-/* 文章部分 */
-
 .text-content h3 {
   margin-bottom: 24px;
-
   color: var(--deep-blue);
-
   font-size: clamp(1.45rem, 2.6vw, 2rem);
   font-weight: 900;
 }
 
 .text-content p {
   margin-bottom: 18px;
-
-  color: var(--text);
 }
-
-
-/* 写真部分 */
 
 .photo-frame {
-  overflow: hidden;
-
   position: relative;
-
+  overflow: hidden;
   border-radius: var(--radius-large);
   background: #dcecf5;
-
   box-shadow: var(--strong-shadow);
-}
-
-.photo-frame::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  pointer-events: none;
-
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: inherit;
 }
 
 .photo-frame img {
   width: 100%;
   height: 420px;
-
   object-fit: cover;
-
   transition: transform 0.5s ease;
 }
 
@@ -237,26 +173,22 @@ section {
   transform: scale(1.035);
 }
 
-
 /* ==================================================
    トップ画像
 ================================================== */
 
 .hero {
+  position: relative;
   min-height: 700px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  position: relative;
-
   padding: 80px 0;
 
   background-image:
     linear-gradient(
-      rgba(5, 54, 83, 0.16),
-      rgba(5, 54, 83, 0.42)
+      rgba(5, 54, 83, 0.12),
+      rgba(5, 54, 83, 0.38)
     ),
     url("https://commons.wikimedia.org/wiki/Special:FilePath/Tokyo_Skytree_%40_Sumida_River_%2813824412025%29.jpg");
 
@@ -267,55 +199,51 @@ section {
 
 .hero::before {
   content: "";
-
   position: absolute;
   inset: 0;
 
   background:
     linear-gradient(
       90deg,
-      rgba(5, 47, 72, 0.1),
+      rgba(5, 47, 72, 0.08),
       transparent 40%,
       transparent 60%,
-      rgba(5, 47, 72, 0.1)
+      rgba(5, 47, 72, 0.08)
     );
 
   pointer-events: none;
 }
 
-
-/* トップ文字枠 */
-
 .hero-content {
   position: relative;
   z-index: 1;
-
   width: min(900px, 88%);
   margin: 0 auto;
-  padding: 62px 38px;
-
+  padding: 56px 38px;
   text-align: center;
 
-  background: rgba(5, 57, 87, 0.24);
-
-  border: 1px solid rgba(255, 255, 255, 0.48);
+  background: rgba(5, 57, 87, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 32px;
 
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 
-  box-shadow:
-    0 20px 50px rgba(0, 35, 57, 0.28);
+  box-shadow: 0 20px 50px rgba(0, 35, 57, 0.28);
 }
 
-
-/* タイトル */
+.hero-kicker {
+  margin-bottom: 14px;
+  color: var(--white);
+  font-size: clamp(0.9rem, 2vw, 1.08rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-shadow: 0 3px 9px rgba(0, 38, 61, 0.7);
+}
 
 .hero-title {
   margin-bottom: 26px;
-
   color: var(--white);
-
   font-size: clamp(3.1rem, 8vw, 6.5rem);
   font-weight: 900;
   line-height: 1.15;
@@ -326,44 +254,28 @@ section {
     0 0 25px rgba(0, 40, 65, 0.28);
 }
 
-
-/* 黄色いキャッチコピー */
-
 .hero-copy {
   display: inline-block;
-
   margin-bottom: 20px;
   padding: 10px 25px;
-
   color: var(--dark-blue);
   background: var(--yellow);
-
   border-radius: 999px;
-
   font-size: clamp(1.05rem, 2.6vw, 1.65rem);
   font-weight: 900;
   letter-spacing: 0.04em;
-
-  box-shadow:
-    0 7px 18px rgba(0, 38, 61, 0.22);
+  box-shadow: 0 7px 18px rgba(0, 38, 61, 0.22);
 }
-
-
-/* サブコピー */
 
 .hero-subcopy {
-  margin-bottom: 0;
-
+  max-width: 680px;
+  margin: 0 auto;
   color: var(--white);
-
-  font-size: clamp(1.05rem, 2.5vw, 1.45rem);
+  font-size: clamp(1.05rem, 2.5vw, 1.38rem);
   font-weight: 800;
-  letter-spacing: 0.06em;
-
-  text-shadow:
-    0 3px 9px rgba(0, 38, 61, 0.7);
+  letter-spacing: 0.04em;
+  text-shadow: 0 3px 9px rgba(0, 38, 61, 0.7);
 }
-
 
 /* ==================================================
    すみだクエストとは
@@ -378,7 +290,6 @@ section {
     );
 }
 
-
 /* ==================================================
    ロゲイニングとは
 ================================================== */
@@ -387,27 +298,19 @@ section {
   background: var(--light-blue);
 }
 
-
-/* 3つの説明カード */
-
 .point-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
-
   margin-top: 65px;
 }
 
 .point-card {
   padding: 36px 28px;
-
   text-align: center;
-
   background: var(--white);
-
   border-top: 6px solid var(--yellow);
   border-radius: var(--radius-medium);
-
   box-shadow: var(--shadow);
 
   transition:
@@ -417,42 +320,42 @@ section {
 
 .point-card:hover {
   transform: translateY(-6px);
-
   box-shadow: var(--strong-shadow);
 }
 
-.point-icon {
+.point-icon,
+.safety-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto 22px;
+  background: var(--light-yellow);
+  border-radius: 50%;
+}
 
+.point-icon {
   width: 78px;
   height: 78px;
-
-  margin: 0 auto 22px;
-
-  background: var(--light-yellow);
-
-  border-radius: 50%;
-
   font-size: 2.3rem;
+}
+
+.point-card h3,
+.safety-card h3,
+.gallery-caption h3 {
+  color: var(--deep-blue);
+  font-weight: 900;
 }
 
 .point-card h3 {
   margin-bottom: 14px;
-
-  color: var(--deep-blue);
-
   font-size: 1.3rem;
-  font-weight: 900;
 }
 
-.point-card p {
+.point-card p,
+.safety-card p,
+.gallery-caption p {
   color: var(--sub-text);
-
-  font-size: 0.97rem;
 }
-
 
 /* ==================================================
    開催概要
@@ -464,22 +367,17 @@ section {
 
 .information-list {
   overflow: hidden;
-
   max-width: 970px;
   margin: 0 auto;
-
   background: var(--white);
-
   border: 1px solid var(--border);
   border-radius: 24px;
-
   box-shadow: var(--strong-shadow);
 }
 
 .information-row {
   display: grid;
   grid-template-columns: 220px 1fr;
-
   border-bottom: 1px solid var(--border);
 }
 
@@ -494,25 +392,18 @@ section {
 .information-label {
   display: flex;
   align-items: center;
-
   padding: 21px 24px;
-
   color: var(--white);
   background: var(--main-blue);
-
   font-weight: 900;
   letter-spacing: 0.04em;
 }
 
 .information-detail {
   padding: 21px 26px;
-
   background: var(--white);
-
-  color: var(--text);
   font-weight: 600;
 }
-
 
 /* ==================================================
    安全管理
@@ -530,9 +421,6 @@ section {
 .safety-lead {
   max-width: 850px;
   margin: -15px auto 48px;
-
-  color: var(--text);
-
   text-align: center;
   font-size: 1.04rem;
   font-weight: 600;
@@ -546,14 +434,10 @@ section {
 
 .safety-card {
   padding: 34px 23px;
-
   text-align: center;
-
   background: var(--white);
-
   border-bottom: 6px solid var(--yellow);
   border-radius: var(--radius-medium);
-
   box-shadow: var(--shadow);
 
   transition:
@@ -563,45 +447,22 @@ section {
 
 .safety-card:hover {
   transform: translateY(-5px);
-
   box-shadow: var(--strong-shadow);
 }
 
 .safety-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   width: 72px;
   height: 72px;
-
-  margin: 0 auto 20px;
-
-  background: var(--light-yellow);
-
-  border-radius: 50%;
-
   font-size: 2.05rem;
 }
 
 .safety-card h3 {
   margin-bottom: 13px;
-
-  color: var(--deep-blue);
-
   font-size: 1.18rem;
-  font-weight: 900;
 }
-
-.safety-card p {
-  color: var(--sub-text);
-
-  font-size: 0.94rem;
-}
-
 
 /* ==================================================
-   墨田区の魅力・ギャラリー
+   墨田区の魅力
 ================================================== */
 
 .gallery {
@@ -616,11 +477,9 @@ section {
 
 .gallery-item {
   overflow: hidden;
-
   background: var(--white);
-
+  border: 1px solid rgba(7, 84, 127, 0.08);
   border-radius: 24px;
-
   box-shadow: var(--shadow);
 
   transition:
@@ -630,16 +489,13 @@ section {
 
 .gallery-item:hover {
   transform: translateY(-5px);
-
   box-shadow: var(--strong-shadow);
 }
 
 .gallery-item img {
   width: 100%;
-  height: 290px;
-
+  height: 310px;
   object-fit: cover;
-
   transition: transform 0.5s ease;
 }
 
@@ -648,103 +504,150 @@ section {
 }
 
 .gallery-caption {
-  padding: 26px 28px 30px;
+  position: relative;
+  padding: 28px 30px 32px;
+}
+
+.gallery-number {
+  position: absolute;
+  top: -25px;
+  right: 24px;
+
+  width: 52px;
+  height: 52px;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--dark-blue) !important;
+  background: var(--yellow);
+  border: 4px solid var(--white);
+  border-radius: 50%;
+
+  font-size: 0.86rem;
+  font-weight: 900;
 }
 
 .gallery-caption h3 {
   margin-bottom: 11px;
-
-  color: var(--deep-blue);
-
-  font-size: 1.35rem;
-  font-weight: 900;
+  font-size: 1.4rem;
 }
-
-.gallery-caption p {
-  color: var(--sub-text);
-}
-
 
 /* ==================================================
    お知らせ
 ================================================== */
 
 .news {
+  color: var(--white);
+
   background:
     linear-gradient(
       135deg,
       var(--deep-blue),
       var(--main-blue)
     );
-
-  color: var(--white);
 }
 
 .news .section-heading h2 {
   color: var(--white);
 }
 
-.news .section-heading p {
+.news .section-heading > p:last-child {
   color: rgba(255, 255, 255, 0.85);
 }
 
 .coming-soon {
-  max-width: 560px;
+  max-width: 620px;
   margin: 0 auto;
-  padding: 36px 25px;
+  padding: 34px 25px;
 
   color: var(--dark-blue);
   background: var(--yellow);
-
   border-radius: 22px;
-
   text-align: center;
-
-  font-size: clamp(1.7rem, 4vw, 2.7rem);
-  font-weight: 900;
-  letter-spacing: 0.12em;
 
   box-shadow:
     0 18px 38px rgba(0, 32, 52, 0.24);
 }
 
+.coming-soon span {
+  display: block;
+  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.coming-soon small {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
 
 /* ==================================================
    フッター
 ================================================== */
 
 footer {
-  padding: 36px 20px;
-
+  padding: 42px 20px;
   color: rgba(255, 255, 255, 0.87);
   background: var(--dark-blue);
-
   text-align: center;
-
   font-size: 0.9rem;
+}
+
+.footer-inner {
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+.footer-title {
+  margin-bottom: 8px;
+  color: var(--white);
+  font-size: 1.35rem;
+  font-weight: 900;
 }
 
 footer p {
   margin-bottom: 6px;
 }
 
+.copyright {
+  margin-top: 12px;
+}
+
+.photo-credit {
+  max-width: 700px;
+  margin: 20px auto 0;
+  color: rgba(255, 255, 255, 0.72);
+  text-align: left;
+}
+
+.photo-credit summary {
+  cursor: pointer;
+  text-align: center;
+  font-weight: 700;
+}
+
+.photo-credit p {
+  margin-top: 12px;
+  font-size: 0.82rem;
+}
 
 /* ==================================================
    タブレット表示
 ================================================== */
 
 @media screen and (max-width: 960px) {
-
   section {
     padding: 82px 0;
   }
 
   .two-column {
     gap: 42px;
-  }
-
-  .point-list {
-    gap: 18px;
   }
 
   .safety-grid {
@@ -756,13 +659,11 @@ footer p {
   }
 }
 
-
 /* ==================================================
    スマートフォン表示
 ================================================== */
 
 @media screen and (max-width: 768px) {
-
   body {
     font-size: 15px;
     line-height: 1.85;
@@ -776,44 +677,33 @@ footer p {
     padding: 70px 0;
   }
 
-
-  /* 見出し */
-
   .section-heading {
     margin-bottom: 42px;
   }
 
   .section-heading h2 {
     margin-bottom: 16px;
-
     font-size: clamp(1.75rem, 8vw, 2.3rem);
   }
 
-  .section-heading p {
+  .section-heading > p:last-child {
     font-size: 0.96rem;
   }
 
-
-  /* トップ */
-
   .hero {
-    min-height: 600px;
-
+    min-height: 610px;
     padding: 55px 0;
-
-    background-position: 57% center;
+    background-position: 58% center;
   }
 
   .hero-content {
     width: 90%;
-    padding: 43px 18px;
-
+    padding: 42px 18px;
     border-radius: 24px;
   }
 
   .hero-title {
     margin-bottom: 22px;
-
     font-size: clamp(2.8rem, 14vw, 4.2rem);
     letter-spacing: 0.03em;
   }
@@ -821,7 +711,6 @@ footer p {
   .hero-copy {
     margin-bottom: 17px;
     padding: 9px 17px;
-
     font-size: 1.05rem;
   }
 
@@ -830,12 +719,17 @@ footer p {
     line-height: 1.7;
   }
 
-
-  /* 写真と文章 */
-
   .two-column {
     grid-template-columns: 1fr;
     gap: 34px;
+  }
+
+  .reverse-on-desktop .text-content {
+    order: 2;
+  }
+
+  .reverse-on-desktop .photo-frame {
+    order: 1;
   }
 
   .text-content h3 {
@@ -850,22 +744,11 @@ footer p {
     height: 280px;
   }
 
-
-  /* ロゲイニングカード */
-
   .point-list {
     grid-template-columns: 1fr;
     gap: 22px;
-
     margin-top: 46px;
   }
-
-  .point-card {
-    padding: 31px 23px;
-  }
-
-
-  /* 開催概要 */
 
   .information-list {
     border-radius: 19px;
@@ -883,17 +766,9 @@ footer p {
     padding: 18px 17px 21px;
   }
 
-  .information-row:nth-child(even) .information-detail {
-    background: var(--pale-blue);
-  }
-
-
-  /* 安全管理 */
-
   .safety-lead {
     margin-top: -5px;
     margin-bottom: 36px;
-
     text-align: left;
   }
 
@@ -902,41 +777,31 @@ footer p {
     gap: 22px;
   }
 
-
-  /* ギャラリー */
-
   .gallery-grid {
     grid-template-columns: 1fr;
     gap: 27px;
   }
 
   .gallery-item img {
-    height: 235px;
+    height: 245px;
   }
 
   .gallery-caption {
-    padding: 22px 22px 25px;
+    padding: 25px 22px 27px;
   }
-
-
-  /* お知らせ */
 
   .coming-soon {
     padding: 30px 18px;
-
-    font-size: 1.7rem;
   }
 }
-
 
 /* ==================================================
    小さいスマートフォン
 ================================================== */
 
 @media screen and (max-width: 420px) {
-
   .hero {
-    min-height: 560px;
+    min-height: 570px;
   }
 
   .hero-content {
@@ -957,17 +822,15 @@ footer p {
   }
 
   .gallery-item img {
-    height: 215px;
+    height: 220px;
   }
 }
 
-
 /* ==================================================
-   動きを減らす設定の利用者向け
+   動きを減らす設定への対応
 ================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-
   html {
     scroll-behavior: auto;
   }
